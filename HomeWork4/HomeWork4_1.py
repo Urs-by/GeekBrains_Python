@@ -21,4 +21,4 @@ precision = int(input("Введите необходимую точность: "
 if precision > 15:
     print("Введенная степень слишком высока, результат будет отображен только до 15 разряда")
 output = 1 / math.pow(10, precision)
-print(f"π с заданной точностью {output} -> {round(math.pi,precision)}")
+print(f"π с заданной точностью {output} -> {round(math.pi, precision)}")
