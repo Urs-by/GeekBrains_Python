@@ -3,11 +3,39 @@
 # 2, 3, 4, 6, 7, 8 -> 6, 7, 8
 
 import random
-my_list = [random.randint(1, 11) for i in range(10)]
-print(f'Исходный список: {my_list}')
+# my_list = [random.randint(1, 11) for i in range(10)]
+# print(f'Исходный список: {my_list}')
+#
+# new_list = list(filter(lambda i: i > 5, my_list))
+#
+# # или без lambda
+# # new_list = list(my_list[i] for i in range(len(my_list)) if my_list[i]>5)
+# print(f'Отфильтрованный список: {new_list}')
 
-new_list = list(filter(lambda i: i > 5, my_list))
+# Задача 2. Дан список случайных чисел. Создайте список,
+# в который попадают числа, описывающие возрастающую последовательность.
+# Порядок элементов менять нельзя.
+# [1, 5, 2, 3, 4, 6, 1, 7] =>[1, 2, 3] или [1, 7] или [1, 6, 7] и т.д.
 
-# или без lambda
-# new_list = list(my_list[i] for i in range(len(my_list)) if my_list[i]>5)
-print(f'Отфильтрованный список: {new_list}')
+my_list = [random.randint(0,50) for i in range(10)]
+print(my_list)
+
+def subs (list, j):
+    temp = list[j]
+    new_list = [temp]
+    for i in range(j, len(list)):
+        if list[i] > temp:
+            temp = list[i]
+            new_list.append(list[i])
+    if len(new_list) > 1:
+        return new_list
+# new_list=list(map( lambda :  ,my_list))
+
+print("Возможные возрастающие последовательности: ")
+for i in range(len(my_list)):
+    new_list = subs(my_list, i)
+    if  new_list != None:
+        print(new_list)
+
+
+
