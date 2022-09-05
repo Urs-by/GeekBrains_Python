@@ -1,5 +1,7 @@
 import controller
 
 controller.callMainMenu()
-controller.initValue()
-controller.callButton()
+value = controller.initValue()
+while value != 0:
+    controller.callButton()
+    value = controller.initValue()
