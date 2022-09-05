@@ -20,7 +20,7 @@ def getNewEntry(data):
 
 def printAll(data):
     for i in range(len(data)):
-        print(data[i], end = '')
+        print(f" {i+1}: {data[i]}", end = '')
 
 def searchName():
     user = input(f"Введите имя для поиска: ")
@@ -33,3 +33,6 @@ def printName(result):
         print(f"По Вашему запросу найдены следующие совпадения:")
         for i in range(len(result)):
             print(result[i], end='')
+
+def printExportXml():
+    print("Данные справочника успешно экспортированы в xml формат ")

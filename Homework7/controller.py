@@ -2,6 +2,7 @@ import view
 import modelTxtFile
 import modelNewEntry
 import modelSearchName
+import modelXmlExport
 
 value = None
 
@@ -27,6 +28,15 @@ def callPrintNAme():
     result = modelSearchName.searchName(data, name)
     view.printName(result)
 
+def callXmlExport():
+    with open('catalog.xml', 'w', encoding="utf-8") as page:
+        page.write('')
+    data = modelTxtFile.readAll()
+    for i in data:
+        newstr = i.split(' ')
+        modelXmlExport.createXml(newstr)
+    view.printExportXml()
+
 
 
 def callButton():
@@ -37,4 +47,6 @@ def callButton():
         callNewEntry()
     elif value == 3:
         callPrintNAme()
+    elif value == 4:
+        callXmlExport()
 
