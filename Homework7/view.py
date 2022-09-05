@@ -36,3 +36,9 @@ def printName(result):
 
 def printExportXml():
     print("Данные справочника успешно экспортированы в xml формат ")
+
+def printExportHtml():
+    print("Данные справочника успешно экспортированы в html формат ")
+
+def printError():
+    print("Вы ввели несуществующий пункт меню")

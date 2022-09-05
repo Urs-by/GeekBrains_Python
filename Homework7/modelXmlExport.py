@@ -1,4 +1,3 @@
-
 def createXml(data):
 
     xml = '<xml>\n'

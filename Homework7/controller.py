@@ -3,6 +3,7 @@ import modelTxtFile
 import modelNewEntry
 import modelSearchName
 import modelXmlExport
+import  modelHtmlExport
 
 value = None
 
@@ -37,6 +38,17 @@ def callXmlExport():
         modelXmlExport.createXml(newstr)
     view.printExportXml()
 
+def callHtmlExport():
+    with open('catalog.html', 'w', encoding="utf-8") as page:
+        page.write(modelHtmlExport.head)
+    data = modelTxtFile.readAll()
+    for i in data:
+        newstr = i.split(' ')
+        modelHtmlExport.createHTML(newstr)
+    with open('catalog.html', 'a', encoding="utf-8") as page:
+        page.write('\n</html>')
+    view.printExportHtml()
+
 
 
 def callButton():
@@ -48,5 +60,9 @@ def callButton():
     elif value == 3:
         callPrintNAme()
     elif value == 4:
+        callHtmlExport()
+    elif value == 5:
         callXmlExport()
+    else:
+        view.printError()
 
