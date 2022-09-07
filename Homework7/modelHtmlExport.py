@@ -20,4 +20,3 @@ def createHTML(data):
     return html
 
 head = '<html>\n  <head></head>\n'
-#html = '<html>\n  <head></head>\n
